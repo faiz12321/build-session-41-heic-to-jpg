@@ -1,0 +1,68 @@
+Collecting Pillow==12.0.0
+  Downloading pillow-12.0.0-cp312-cp312-win_amd64.whl.metadata (9.0 kB)
+Collecting pillow-heif==1.8.1
+  Downloading pillow_heif-1.8.1-cp312-cp312-win_amd64.whl.metadata (9.9 kB)
+Downloading pillow-12.0.0-cp312-cp312-win_amd64.whl (7.0 MB)
+   ---------------------------------------- 7.0/7.0 MB 19.6 MB/s  0:00:00
+Downloading pillow_heif-1.8.1-cp312-cp312-win_amd64.whl (6.6 MB)
+   ---------------------------------------- 6.6/6.6 MB 40.7 MB/s  0:00:00
+Installing collected packages: Pillow, pillow-heif
+
+Successfully installed Pillow-12.0.0 pillow-heif-1.8.1
+
+### CMD: python make_sample.py
+Created three tiny fictional HEIC pictures. No real photos.
+### EXIT: 0
+
+### CMD: python make_sample.py
+Stopped: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\lesson41-record-ns3ljvqt\\photos'. Nothing reset or deleted.
+### EXIT: 1
+
+### CMD: python convert_heic.py photos jpg-practice
+Created sample1.jpg: JPEG 64x48
+Created sample2.jpg: JPEG 80x60
+Created sample3.jpg: JPEG 48x48
+Checked 3 source filenames and SHA256 digests unchanged.
+First image only; orientation applied, alpha flattened on white, metadata stripped.
+Lossy JPEG copies, not proof of color/date/HDR/Live Photo/metadata preservation.
+### EXIT: 0
+
+### CMD: python convert_heic.py photos jpg-practice
+Stopped: Output path exists. Nothing replaced.
+No automatic cleanup/retry. Existing source/output folders are not deleted.
+### EXIT: 1
+
+### CMD: python -m unittest -v
+test_case_colliding_stems_refused (test_convert_heic.Tests.test_case_colliding_stems_refused) ... skipped 'Case-distinct filenames unavailable on this filesystem'
+test_conversion_decodes_all_three_expected_sizes (test_convert_heic.Tests.test_conversion_decodes_all_three_expected_sizes) ... ok
+test_dangling_output_link_refused (test_convert_heic.Tests.test_dangling_output_link_refused) ... ok
+test_empty_folder_refused_before_output_creation (test_convert_heic.Tests.test_empty_folder_refused_before_output_creation) ... ok
+test_existing_destination_file_preserved (test_convert_heic.Tests.test_existing_destination_file_preserved) ... ok
+test_existing_unrelated_directory_preserved (test_convert_heic.Tests.test_existing_unrelated_directory_preserved) ... ok
+test_fifo_refused_without_external_decode (test_convert_heic.Tests.test_fifo_refused_without_external_decode) ... skipped 'Unix pipes unavailable'
+test_file_symlink_refused (test_convert_heic.Tests.test_file_symlink_refused) ... ok
+test_hardlink_source_refused (test_convert_heic.Tests.test_hardlink_source_refused) ... ok
+test_interpretation_characters_refused (test_convert_heic.Tests.test_interpretation_characters_refused) ... ok
+test_invalid_generated_bytes_refused_before_output_file (test_convert_heic.Tests.test_invalid_generated_bytes_refused_before_output_file) ... ok
+test_invalid_heic_fails_without_source_changes (test_convert_heic.Tests.test_invalid_heic_fails_without_source_changes) ... ok
+test_linked_parent_refused (test_convert_heic.Tests.test_linked_parent_refused) ... ok
+test_missing_executable_refused_before_output_creation (test_convert_heic.Tests.test_missing_executable_refused_before_output_creation) ... ok
+test_more_than_100_entries_refused (test_convert_heic.Tests.test_more_than_100_entries_refused) ... ok
+test_non_heic_refused (test_convert_heic.Tests.test_non_heic_refused) ... ok
+test_output_inside_source_refused_before_any_creation (test_convert_heic.Tests.test_output_inside_source_refused_before_any_creation) ... ok
+test_oversized_source_refused_before_reading (test_convert_heic.Tests.test_oversized_source_refused_before_reading) ... ok
+test_partial_failure_keeps_completed_output_and_originals (test_convert_heic.Tests.test_partial_failure_keeps_completed_output_and_originals) ... ok
+test_repeat_conversion_preserves_all_existing_output_bytes_and_times (test_convert_heic.Tests.test_repeat_conversion_preserves_all_existing_output_bytes_and_times) ... ok
+test_repeat_setup_preserves_bytes_and_times (test_convert_heic.Tests.test_repeat_setup_preserves_bytes_and_times) ... ok
+test_root_symlink_refused (test_convert_heic.Tests.test_root_symlink_refused) ... ok
+test_setup_existing_file_preserved (test_convert_heic.Tests.test_setup_existing_file_preserved) ... ok
+test_setup_linked_parent_refused (test_convert_heic.Tests.test_setup_linked_parent_refused) ... ok
+test_source_inventory_change_refused_after_copy (test_convert_heic.Tests.test_source_inventory_change_refused_after_copy) ... ok
+test_subfolder_refused (test_convert_heic.Tests.test_subfolder_refused) ... ok
+test_traversal_refused (test_convert_heic.Tests.test_traversal_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 2.789s
+
+OK (skipped=2)
+### EXIT: 0
